@@ -116,18 +116,42 @@ else
 {
   echo "</br> Votre date de naissance est érronée !";
 }
+ 
+$premierNombre = ($_POST['nombreP']);
+$n = ($_POST['nombreS']);
+ 
+for ($i = $premierNombre; $i <= $n; $i++){
+    if ($i%2==0){
+        echo "<p class='pair'>$i</p>";
+    }
+    else {
+        echo "<p class='impair'>$i</p>";
+    }
+        $racine = (sqrt($i));
+        if (is_int($racine) == "true"){
+            echo "<p class='carre'>$i</p>";
+
+        }
+    }
+   
+}
     
     
-    $premierNombre = ($_POST['nombreP']);
-    $secondNombre = ($_POST['nombreS']);
-    $tab = array(3,4,6);
-    array_push($tab, $secondNombre);
-    array_unshift($tab, $premierNombre);
-    print_r ($tab);
-        
+ /* 2e algo - OK   
+$number = range($premierNombre,$n);
+print_r($number);
+
 }
     
 /*
+
+    $premierNombre = ($_POST['nombreP']);
+    $secondNombre = ($_POST['nombreS']);
+    $tab = array();
+    array_push($tab, $secondNombre);
+    array_unshift($tab, $premierNombre);
+    print_r ($tab);
+    
 if ( $mois == '1'){
     $month = "janvier";
 }
@@ -165,6 +189,20 @@ if ( $mois == '12'){
     $month = "décembre";
 }*/
 ?>
+<style>
+    .pair {
+        color:blue;
+    }
+    .impair {
+        color: orange;
+    }
+    
+    .carre {
+        font-weight: bold;
+    }
+    
+    
+    </style>
 </body>
 
 </html>
